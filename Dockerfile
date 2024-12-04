@@ -10,9 +10,3 @@ RUN pip install -r requirements.txt
 WORKDIR /app
 COPY . .
 RUN mkdir -p /app/static/storage
-
-# Expose the port
-EXPOSE 8080
-
-# Run the application
-CMD python manage.py runserver 0.0.0.0:8080
