@@ -1,2 +1,12 @@
-# Web Personal
-Mi web personal
+### Plantilla para el archivo .env
+
+```
+DJANGO_SECRET_KEY=
+DJANGO_ALLOWED_HOST=
+DJANGO_PORT=
+MYSQL_DATABASE=
+MYSQL_ROOT_PASSWORD=
+MYSQL_PORT=
+MYSQL_DIR=
+STORAGE_DIR=
+```

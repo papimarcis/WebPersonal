@@ -8,15 +8,15 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
-      - "${PORT_DB}:3306"
+      - "${MYSQL_PORT}:3306"
     volumes:
-      - ${DB_DIR}:/var/lib/mysql
+      - ${MYSQL_DIR}:/var/lib/mysql
 
   django:
     build: papimarcis/web_personal:lastest
     restart: always
     ports:
-      - "${PORT_WEB}:8080"
+      - "${DJANGO_PORT}:8080"
     command:
       - /bin/sh
       - -c
