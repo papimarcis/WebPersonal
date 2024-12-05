@@ -7,4 +7,4 @@ django.setup()
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
-User.objects.create_superuser('admin', 'admin@gmail.com', os.environ.get('DJANGO_SUPERUSER_PASSWORD'))
+User.objects.create_superuser('admin', 'admin@admin.com', os.environ.get('DJANGO_SUPERUSER_PASSWORD', 'admin'))
