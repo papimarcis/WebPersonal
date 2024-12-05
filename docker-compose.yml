@@ -3,6 +3,10 @@ services:
   django:
     image: ghcr.io/papimarcis/web_personal:lastest
     restart: always
+    environment:
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
+      - DJANGO_ALLOWED_HOST=${DJANGO_ALLOWED_HOST}
+      - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
     ports:
       - "${DJANGO_PORT}:8080"
     command:
