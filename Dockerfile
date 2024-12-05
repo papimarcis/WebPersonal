@@ -9,4 +9,3 @@ RUN pip install -r requirements.txt
 # Copy the source code
 WORKDIR /app
 COPY . .
-RUN mkdir -p /app/static/storage
