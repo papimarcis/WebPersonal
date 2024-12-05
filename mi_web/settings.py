@@ -28,6 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOST', '127.0.0.1~*').split('~')
 
+SUPERUSER_PASSWORD = os.environ.get('DJANGO_SUPERUSER_PASSWORD', 'admin')
+
 # Application definition
 
 INSTALLED_APPS = [

@@ -5,10 +5,11 @@ import django
 django.setup()
 
 from django.contrib.auth import get_user_model
+from django.conf import settings
 
 User = get_user_model()
 if not User.objects.filter(username='admin').exists():
-    User.objects.create_superuser('admin', 'admin@admin.com', os.environ.get('DJANGO_SUPERUSER_PASSWORD', 'admin'))
+    User.objects.create_superuser('admin', 'admin@admin.com', settings.SUPERUSER_PASSWORD)
     print('Superuser created!')
 else:
     print('Superuser already exists.')
