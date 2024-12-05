@@ -1,17 +1,5 @@
 version: '3.9'
 services:
-  db:
-    image: mysql:8.0.32
-    container_name: database_policia
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-    ports:
-      - "${MYSQL_PORT}:3306"
-    volumes:
-      - ${MYSQL_DIR}:/var/lib/mysql
-
   django:
     build: papimarcis/web_personal:lastest
     restart: always
@@ -24,7 +12,3 @@ services:
         python manage.py makemigrations
         python manage.py migrate
         python manage.py runserver 0.0.0.0:8080
-    volumes:
-      - ${STORAGE_DIR}:/app/static/storage
-    depends_on:
-      - db
